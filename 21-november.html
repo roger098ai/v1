@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0a18"><title>THE AFTERGLOW PROTOCOL — For Vaishnavi</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet"><style>
+:root{--bg:#0b0a18;--fg:#f6eff8;--muted:#c4b5cf;--pink:#edc2e2;--blue:#b9d5ff;--line:#f0c9e52b;--mono:'DM Mono',monospace;--serif:'Playfair Display',serif;--sans:'Manrope',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);overflow-x:hidden}
+body:before{content:'';position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 15% 12%,#55315f66,transparent 40%),radial-gradient(ellipse at 85% 70%,#35416b55,transparent 42%),#0b0a18}
+canvas#sky{position:fixed;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:9;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+header{height:70px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 6vw;font:9px var(--mono);letter-spacing:.18em;color:#e6cbe5;position:relative;z-index:2}
+main{max-width:1320px;margin:auto;padding:0 6vw}.eyebrow{font:9px var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--pink)}
+.hero{min-height:95vh;display:grid;grid-template-columns:1fr .9fr;gap:4vw;align-items:center;padding:9vh 0 12vh;position:relative}
+h1{font:clamp(65px,10vw,145px)/.87 var(--serif);font-weight:400;letter-spacing:-.07em;margin:28px 0}h1 em{display:block;color:#e9c9ed;margin-left:.25em}
+.hero p{font-size:13px;line-height:2.1;color:#d3c5dc;max-width:490px;font-weight:300}
+.art{height:530px;display:grid;place-items:center;position:relative;perspective:900px}
+.planet{width:min(42vw,450px);aspect-ratio:1;border-radius:50%;position:relative;background:radial-gradient(circle at 33% 27%,#fff8ff 0 1%,#efcbea 3%,#bd8ec7 13%,#684b87 35%,#302343 62%,#151327 75%);box-shadow:inset -38px -28px 65px #070611aa,0 0 65px #d9a9e755,0 0 150px #a47bd333;animation:float 8s ease-in-out infinite}
+.planet:before{content:'';position:absolute;inset:15% -25%;border:2px solid #f4d5ef99;border-radius:50%;transform:rotateX(68deg) rotateZ(-17deg);box-shadow:0 0 25px #edc8ed44}
+.planet:after{content:'';position:absolute;inset:22% -33%;border:1px solid #d5b7f188;border-radius:50%;transform:rotateX(70deg) rotateZ(24deg)}
+@keyframes float{50%{transform:translateY(-12px) rotate(3deg)}}
+.planet-core{position:absolute;inset:35%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#f3d6f6 25%,#b68bc7 60%,transparent 73%);box-shadow:0 0 45px 20px #f3c9f077}
+.planet-label{position:absolute;bottom:5%;right:0;font:8px var(--mono);letter-spacing:.18em;color:#c1a5ca}
+.scroll{position:absolute;bottom:4%;left:0;writing-mode:vertical-rl;font:8px var(--mono);letter-spacing:.18em;color:#ae91b9}
+section{padding:110px 0;border-top:1px solid var(--line)}.head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:38px}
+h2{font:clamp(42px,6vw,78px)/.96 var(--serif);font-weight:400;letter-spacing:-.055em;margin:15px 0 0}.index{font:8px var(--mono);letter-spacing:.17em;color:#b798c1}
+.intro{font-size:12px;line-height:2.05;color:#d1bfd7;max-width:720px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:42px}
+.card{min-height:210px;text-align:left;padding:22px;border:1px solid var(--line);background:linear-gradient(145deg,#f4d3f00c,transparent 65%);color:var(--fg);position:relative;overflow:hidden;transition:.3s}
+button.card{cursor:pointer}.card:hover{transform:translateY(-5px);border-color:#f2cde599;background:#f3cbe616}
+.card small{font:8px var(--mono);letter-spacing:.17em;color:#eab7d9}.card .symbol{display:block;font-size:22px;color:#f2d6f1;margin:25px 0 16px;text-shadow:0 0 20px #e9b9e9}.card h3{font:24px var(--serif);font-weight:400;margin:0 0 8px}.card p{font-size:10px;line-height:1.8;color:#c8b5d0;margin:0}
+.modal{position:fixed;inset:0;background:#090510e8;backdrop-filter:blur(17px);z-index:30;display:none;place-items:center;padding:20px}.modal.open{display:grid}
+.modalbox{width:min(590px,100%);padding:40px;border:1px solid #efc5e67a;background:linear-gradient(145deg,#34203f,#160e23);position:relative;box-shadow:0 30px 120px #0009}
+.modalbox button{position:absolute;right:15px;top:12px;border:0;background:none;color:#f1d7ee;font-size:20px;cursor:pointer}.modalbox small{font:8px var(--mono);letter-spacing:.18em;color:#efbfdf}.modalbox h3{font:37px var(--serif);font-weight:400;margin:20px 0 12px}.modalbox p{font-size:12px;line-height:2.1;color:#e0d0e4}
+footer{text-align:center;padding:40px 0 55px;font:8px var(--mono);letter-spacing:.18em;color:#a98bb4}
+@media(max-width:800px){header{padding:0 5vw}main{padding:0 6vw}.hero{grid-template-columns:1fr;padding:10vh 0 8vh}.art{height:350px}.planet{width:min(76vw,350px)}.head{display:block}.index{display:block;margin-top:16px}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.card{min-height:175px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style></head><body><canvas id="sky"></canvas><div class="grain"></div>
+<header><span>AFTERGLOW / PRIVATE TRANSMISSION</span><span>CONNECTION FOUND · FILE 001—002</span></header><main>
+<section class="hero" style="border:0"><div class="scroll">SCROLL TO OPEN ↓</div><div><div class="eyebrow">A SIGNAL CROSSING TWO STATES</div><h1>Somewhere,<br>there is a <em>little star.</em></h1><p>And somehow, in all this enormous universe, I got lucky enough to know her. This is a tiny corner of the internet made for one person. No grand explanation. Just a signal, a few thoughts, and a date worth remembering.</p><p style="font:8px var(--mono);letter-spacing:.15em;color:#9da8c4">FOR VAISHNAVI · 21 NOVEMBER 2026</p></div><div class="art"><div class="planet"><div class="planet-core"></div></div><div class="planet-label">ODISHA ⇄ BIHAR · SAME SKY</div></div></section>
+<section id="notes"><div class="head"><div><div class="eyebrow">01 / FIELD NOTES</div><h2>Five small<br>observations.</h2></div><div class="index">TAP A NOTE TO OPEN IT ↗</div></div><p class="intro">This isn't a list of reasons or a speech. It's a handful of things I hope you remember about yourself. Click through the coordinates. Each one has a note waiting behind it. And no, you don't need to do anything special to deserve any of it.</p>
+<div class="grid">
+<button class="card" data-note="0"><small>NOTE / 01</small><span class="symbol">✳</span><h3>Your presence</h3><p>The ordinary day gets a little less ordinary.</p></button>
+<button class="card" data-note="1"><small>NOTE / 02</small><span class="symbol">⌁</span><h3>Your details</h3><p>The little things that could only belong to you.</p></button>
+<button class="card" data-note="2"><small>NOTE / 03</small><span class="symbol">✧</span><h3>Your own orbit</h3><p>Never let the world make you smaller.</p></button>
+<button class="card" data-note="3"><small>NOTE / 04</small><span class="symbol">⌖</span><h3>Our two skies</h3><p>Distance is geography, not the whole story.</p></button>
+<button class="card" data-note="4"><small>NOTE / 05</small><span class="symbol">∞</span><h3>What comes next</h3><p>A second little universe is waiting for you.</p></button>
+</div></section>
+<section><div class="head"><div><div class="eyebrow">02 / A NOTE FROM THE SENDER</div><h2>Keep being<br>unmistakably you.</h2></div></div><p class="intro" style="font:clamp(23px,3vw,38px)/1.5 var(--serif);color:#f1e5f2">“You became a favourite part of my days without even trying to.”</p><p class="intro">I hope you keep your odd little thoughts, your big plans, your softness, your stubbornness and all the things that make you you. I hope you never feel like you have to become easier to understand just to be accepted. You're allowed to take up space, change your mind, be a little chaotic and still be figuring it all out. That's part of being seventeen, and honestly, part of being alive.</p></section>
+<section><div class="head"><div><div class="eyebrow">INCOMING TRANSMISSION / 26 NOVEMBER</div><h2>The next page<br>is sealed.</h2></div><div class="index" id="timer">-- : -- : -- : --</div></div><p class="intro">This was the signal. On your birthday, the sky opens properly. A whole little universe, with your name written somewhere in it.</p></section>
+<footer>TRANSMISSION 001 COMPLETE · MADE FOR VAISHNAVI · WITH LOVE, FROM MY SKY</footer></main>
+<div class="modal" id="modal"><div class="modalbox"><button id="close">×</button><small id="mlabel"></small><h3 id="mtitle"></h3><p id="mcopy"></p></div></div>
+<script>
+const notes=[
+["Your presence","You have a way of making a conversation feel like somewhere I can stay for a while. Even a random little update from you can shift the mood of a day. I hope you know that you matter even when you're not trying to make an impression."],
+["Your details","It's the tiny things that stay with me: the way you phrase something, the things you get excited about, your random thoughts and the details that make you unmistakably you. You don't have to be more anything. The details are already enough."],
+["Your own orbit","Please don't become a smaller version of yourself to fit into somebody else's idea of who you should be. Keep growing, keep changing, keep finding things that make your eyes light up. Your life belongs to you."],
+["Our two skies","Odisha and Bihar are two points on a map. That's all. The sky doesn't stop at a state border, and neither does the good thought of someone hoping your day goes well. I hope today is gentle with you."],
+["What comes next","This is just the first page. Keep 26 November close. There's another little universe waiting, and that one is all yours. For now, take this as a small reminder: you're thought of, you're celebrated, and you're worth the effort."]
+];
+const modal=document.getElementById('modal');document.querySelectorAll('[data-note]').forEach(b=>b.onclick=()=>{let n=notes[+b.dataset.note];document.getElementById('mlabel').textContent='FIELD NOTE / '+( +b.dataset.note+1);document.getElementById('mtitle').textContent=n[0];document.getElementById('mcopy').textContent=n[1];modal.classList.add('open')});
+document.getElementById('close').onclick=()=>modal.classList.remove('open');modal.onclick=e=>{if(e.target===modal)modal.classList.remove('open')};
+const target=new Date('2026-11-26T00:00:00');function tick(){let x=Math.max(0,target-new Date()),d=Math.floor(x/86400000),h=Math.floor(x%86400000/3600000),m=Math.floor(x%3600000/60000),s=Math.floor(x%60000/1000);document.getElementById('timer').textContent=[d,h,m,s].map(v=>String(v).padStart(2,'0')).join(' : ')}tick();setInterval(tick,1000);
+const c=document.getElementById('sky'),ctx=c.getContext('2d');let stars=[];function resize(){c.width=innerWidth*devicePixelRatio;c.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);stars=Array.from({length:Math.min(170,Math.floor(innerWidth/6))},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.3+.2,a:Math.random()*.55+.1,p:Math.random()*7}))}function draw(t){ctx.clearRect(0,0,innerWidth,innerHeight);for(let s of stars){ctx.fillStyle=`rgba(210,225,255,${s.a*(.7+.3*Math.sin(t*.001+s.p))})`;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,7);ctx.fill()}requestAnimationFrame(draw)}addEventListener('resize',resize);resize();requestAnimationFrame(draw);
+</script></body></html>
